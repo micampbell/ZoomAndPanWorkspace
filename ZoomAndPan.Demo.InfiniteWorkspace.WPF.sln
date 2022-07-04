@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZoomAndPan.Demo.InfiniteWorkspace.WPF", "ZoomAndPan.Demo.InfiniteWorkspace.WPF\ZoomAndPan.Demo.InfiniteWorkspace.WPF.csproj", "{CD1CC86C-7BAF-45F1-889F-FB087DE883EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD1CC86C-7BAF-45F1-889F-FB087DE883EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD1CC86C-7BAF-45F1-889F-FB087DE883EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD1CC86C-7BAF-45F1-889F-FB087DE883EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD1CC86C-7BAF-45F1-889F-FB087DE883EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A4FD0EB0-0A9F-4583-AB50-F40A06ADBD2A}
+	EndGlobalSection
+EndGlobal
