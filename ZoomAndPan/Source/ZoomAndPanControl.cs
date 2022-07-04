@@ -4,7 +4,6 @@
 
 //Based on:
 //- WPF: http://www.codeproject.com/Articles/85603/A-WPF-custom-control-for-zooming-and-panning
-//- Silverlight: http://www.codeproject.com/Articles/167453/A-Silverlight-custom-control-for-zooming-and-panni
 
 using System;
 using System.Windows;
@@ -13,12 +12,12 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 using Compatibility; //Birbilis
 
-namespace ZoomAndPan
+namespace ZoomAndPanSample
 {
   /// <summary>
   /// A class that wraps up zooming and panning of it's content.
   /// </summary>
-  [TemplatePart(Name = "PART_Content", Type = typeof(FrameworkElement))] //Silverlight needs this, WPF controls can also use, but sometimes just detect PART_ prefix in Generic.xaml
+  [TemplatePart(Name = "PART_Content", Type = typeof(FrameworkElement))] //WPF controls can also use, but sometimes just detect PART_ prefix in Generic.xaml
   [TemplatePart(Name = "PART_DragZoomCanvas", Type = typeof(Canvas))]
   [TemplatePart(Name = "PART_DragZoomBorder", Type = typeof(Border))]
   public partial class ZoomAndPanControl : ContentControl, IScrollInfo
@@ -351,15 +350,11 @@ namespace ZoomAndPan
     /// </summary>
     public void AnimatedZoomTo(Rect contentRect)
     {
-#if !SILVERLIGHT
             double scaleX = this.ContentViewportWidth / contentRect.Width;
             double scaleY = this.ContentViewportHeight / contentRect.Height;
             double newScale = this.ContentScale * Math.Min(scaleX, scaleY);
 
             AnimatedZoomPointToViewportCenter(newScale, new Point(contentRect.X + (contentRect.Width / 2), contentRect.Y + (contentRect.Height / 2)), null);
-#else
-      ZoomTo(contentRect);
-#endif
     }
 
     /// <summary>
@@ -571,25 +566,13 @@ namespace ZoomAndPan
         scrollOwner.InvalidateScrollInfo();
     }
 
-    //#if SILVERLIGHT
     /// <summary>
     /// Constructor to define metadata for the control (and link it to the style in Generic.xaml).
     /// </summary>
     public ZoomAndPanControl()
     {
-      this.DefaultStyleKey = typeof(ZoomAndPanControl); //this should be enough for both WPF and Silerlight, if not uncomment the #if/#else/#endif
+      this.DefaultStyleKey = typeof(ZoomAndPanControl); 
     }
-    /*//#else
-            /// <summary>
-            /// Static constructor to define metadata for the control (and link it to the style in Generic.xaml).
-            /// </summary>
-            static ZoomAndPanControl()
-            {
-                DefaultStyleKeyProperty.OverrideMetadata(typeof(ZoomAndPanControl), new FrameworkPropertyMetadata(typeof(ZoomAndPanControl)));
-            }
-    //#endif
-    */
-
     /// <summary>
     /// Called when a template has been applied to the control.
     /// </summary>

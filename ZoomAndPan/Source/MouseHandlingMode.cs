@@ -1,4 +1,4 @@
-﻿namespace ZoomAndPan
+﻿namespace ZoomAndPanSample
 {
 
   /// <summary>
@@ -31,6 +31,7 @@
     /// The user is holding down ctrl and shift and drags to both pan and zoom
     /// </summary>
     PanningAndZooming,
+        DraggingRectangles
 
-  }
+    }
 }

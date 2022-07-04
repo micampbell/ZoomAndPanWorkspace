@@ -4,13 +4,9 @@
 
 using System.Windows;
 using System.Windows.Controls;
-using Compatibility;
-
-#if !SILVERLIGHT
 using System.Windows.Media; //for Visual type
-#endif
 
-namespace ZoomAndPan
+namespace ZoomAndPanSample
 {
     /// <summary>
     /// This is an extension to the ZoomAndPanControl class that implements

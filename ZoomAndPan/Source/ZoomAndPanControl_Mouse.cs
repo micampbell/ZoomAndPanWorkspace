@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Controls;
 
-namespace ZoomAndPan
+namespace ZoomAndPanSample
 {
     /// <summary>
     /// This is an extension to the ZoomAndPanControl class that implements
@@ -78,17 +78,9 @@ namespace ZoomAndPan
 
       #region Mouse-related Methods
 
-      protected
-#if !SILVERLIGHT
-        override
-#else
-        virtual
-#endif
-        void OnMouseDoubleClick(MouseButtonEventArgs e)
+      protected override void OnMouseDoubleClick(MouseButtonEventArgs e)
       {
-#if !SILVERLIGHT
         base.OnMouseDoubleClick(e);
-#endif
         if (!isDefaultMouseHandling) return;
         if (e.Handled) return;
 
@@ -122,10 +114,7 @@ namespace ZoomAndPan
       protected virtual void OnMouseDown(MouseButtonEventArgs e, MouseButton changedButton)
       {
         Focus(); //had content.Focus
-#if !SILVERLIGHT
         Keyboard.Focus(content);
-#endif
-
         mouseButtonDown = changedButton; //at WPF one could also use "e.ChangedButton"
 
         origZoomAndPanControlMouseDownPoint = e.GetPosition(this);
@@ -161,9 +150,6 @@ namespace ZoomAndPan
         if (!isDefaultMouseHandling) return;
         //if (e.Handled) return;
 
-#if SILVERLIGHT
-        if (e.ClickCount == 2) { OnMouseDoubleClick(e); return; }
-#endif
         OnMouseUp(e, MouseButton.Left);
       }
 
@@ -171,7 +157,6 @@ namespace ZoomAndPan
       {
         //base.OnMouseRightButtonUp(e);
         if (!isDefaultMouseHandling) return;
-        //if (e.Handled) return; //don't do this, else will show Silverlight popup
 
         OnMouseUp(e, MouseButton.Right);
       }
@@ -215,9 +200,7 @@ namespace ZoomAndPan
       {
         base.OnMouseMove(e);
         if (!isDefaultMouseHandling) return;
-#if !SILVERLIGHT
         if (e.Handled) return;
-#endif
 
         if (mouseHandlingMode == MouseHandlingMode.None) return;
 
@@ -231,9 +214,7 @@ namespace ZoomAndPan
             ContentOffsetX -= curContentMousePoint.X - origContentMouseDownPoint.X; //dragOffset.X
             ContentOffsetY -= curContentMousePoint.Y - origContentMouseDownPoint.Y; //dragOffset.Y
 
-#if !SILVERLIGHT
           e.Handled = true;
-#endif
             break;
 
           case MouseHandlingMode.Zooming:
@@ -262,27 +243,21 @@ namespace ZoomAndPan
               InitDragZoomRect(origContentMouseDownPoint, curContentMousePoint);
             }
 
-#if !SILVERLIGHT
           e.Handled = ContentScalable;
-#endif
             break;
 
           case MouseHandlingMode.DragZooming: // When in drag zooming mode continously update the position of the rectangle that the user is dragging out
             SetDragZoomRect(origContentMouseDownPoint, curContentMousePoint);
 
-#if !SILVERLIGHT
           e.Handled = ContentScalable;
-#endif
 
 #endif //DRAGZOOMRECT
 
             break;
 
-#if !SILVERLIGHT
           default:
             e.Handled = false;
             break;
-#endif
         }
       }
 
@@ -400,15 +375,11 @@ namespace ZoomAndPan
       //
       private void FadeOutDragZoomRect()
       {
-#if !SILVERLIGHT
         AnimationHelper.StartAnimation(dragZoomBorder, Border.OpacityProperty, 0.0, 0.1,
             delegate(object sender, EventArgs e)
             {
               dragZoomCanvas.Visibility = Visibility.Collapsed;
             });
-#else
-        dragZoomCanvas.Visibility = Visibility.Collapsed;
-#endif
       }
 
       //

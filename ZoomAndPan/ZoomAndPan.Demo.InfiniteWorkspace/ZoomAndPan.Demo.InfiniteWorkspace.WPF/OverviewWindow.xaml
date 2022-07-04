@@ -1,9 +1,9 @@
 ﻿<Window x:Class="ZoomAndPanSample.OverviewWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:ZoomAndPanSample"
-    xmlns:ZoomAndPan="clr-namespace:ZoomAndPan;assembly=ZoomAndPan"
-    Title="Overview" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:zp="clr-namespace:ZoomAndPanSample" 
+        xmlns:zoomandpansample="clr-namespace:ZoomAndPanSample;assembly=ZoomAndPan"
+        Title="Overview" 
     Height="200" 
     Width="200" 
     WindowStyle="ToolWindow"
@@ -16,7 +16,7 @@
         <!-- 
         Converts a color value to a brush.
         -->
-        <local:ColorToBrushConverter 
+        <zp:ColorToBrushConverter 
             x:Key="colorToBrushConverter"
             />
 
@@ -24,7 +24,7 @@
         Defines the UI for an instance of RectangleData.
         -->
         <DataTemplate 
-            DataType="{x:Type local:RectangleData}"
+            DataType="{x:Type zp:RectangleData}"
             >
             <Rectangle
                 Width="{Binding Width}"
@@ -40,7 +40,7 @@
     This is used so that we can scale the content to fit the overview window,
     therefore we see an overview of all of the content at once.
     -->
-    <ZoomAndPan:ZoomAndPanControl
+    <zoomandpansample:ZoomAndPanControl
         x:Name="overview"
         Background="LightGray"
         SizeChanged="overview_SizeChanged"
@@ -49,9 +49,8 @@
         <!-- 
         This is the content that is displayed.
         -->
-        <Grid
-            Width="{Binding Source={x:Static local:DataModel.Instance}, Path=ContentWidth}"
-            Height="{Binding Source={x:Static local:DataModel.Instance}, Path=ContentHeight}"
+        <Grid Width="{Binding Source={x:Static zp:DataModel.Instance}, Path=ContentWidth}"
+            Height="{Binding Source={x:Static zp:DataModel.Instance}, Path=ContentHeight}"
             SizeChanged="overview_SizeChanged"
             >
             
@@ -62,7 +61,7 @@
             -->
             <ItemsControl
                 x:Name="content"
-                ItemsSource="{Binding Source={x:Static local:DataModel.Instance}, Path=Rectangles}"
+                ItemsSource="{Binding Source={x:Static zp:DataModel.Instance}, Path=Rectangles}"
                 Background="White"
                 >
                 
@@ -88,10 +87,10 @@
             <Canvas>
                 <Thumb
                     x:Name="overviewZoomRectThumb"
-                    Canvas.Left="{Binding Source={x:Static local:DataModel.Instance}, Path=ContentOffsetX, Mode=TwoWay}"
-                    Canvas.Top="{Binding Source={x:Static local:DataModel.Instance}, Path=ContentOffsetY, Mode=TwoWay}"
-                    Width="{Binding Source={x:Static local:DataModel.Instance}, Path=ContentViewportWidth}"
-                    Height="{Binding Source={x:Static local:DataModel.Instance}, Path=ContentViewportHeight}"
+                    Canvas.Left="{Binding Source={x:Static zp:DataModel.Instance}, Path=ContentOffsetX, Mode=TwoWay}"
+                    Canvas.Top="{Binding Source={x:Static zp:DataModel.Instance}, Path=ContentOffsetY, Mode=TwoWay}"
+                    Width="{Binding Source={x:Static zp:DataModel.Instance}, Path=ContentViewportWidth}"
+                    Height="{Binding Source={x:Static zp:DataModel.Instance}, Path=ContentViewportHeight}"
                     DragDelta="overviewZoomRectThumb_DragDelta"
                     Opacity="0.5"
                     >
@@ -113,6 +112,6 @@
             </Canvas>                             
             
         </Grid>                        
-    </ZoomAndPan:ZoomAndPanControl>
+    </zoomandpansample:ZoomAndPanControl>
 
 </Window>

@@ -5,11 +5,9 @@
 using System;
 using System.Windows;
 
-#if !SILVERLIGHT
 using System.Windows.Media.Animation;
-#endif
 
-namespace ZoomAndPan
+namespace ZoomAndPanSample
 {
 
     /// <summary>
@@ -32,7 +30,6 @@ namespace ZoomAndPan
         /// </summary>
         public static void StartAnimation(UIElement animatableElement, DependencyProperty dependencyProperty, double toValue, double animationDurationSeconds, EventHandler completedEvent)
         {
-#if !SILVERLIGHT
             double fromValue = (double)animatableElement.GetValue(dependencyProperty);
 
             DoubleAnimation animation = new DoubleAnimation();
@@ -58,9 +55,6 @@ namespace ZoomAndPan
             animation.Freeze();
 
             animatableElement.BeginAnimation(dependencyProperty, animation);
-#else
-            animatableElement.SetValue(dependencyProperty, toValue);
-#endif
         }
 
         /// <summary>
@@ -68,9 +62,7 @@ namespace ZoomAndPan
         /// </summary>
         public static void CancelAnimation(UIElement animatableElement, DependencyProperty dependencyProperty)
         {
-#if !SILVERLIGHT
           animatableElement.BeginAnimation(dependencyProperty, null);
-#endif
         }
     }
 }

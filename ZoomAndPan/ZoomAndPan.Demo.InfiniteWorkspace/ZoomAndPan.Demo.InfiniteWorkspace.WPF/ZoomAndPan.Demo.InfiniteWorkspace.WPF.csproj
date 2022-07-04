@@ -144,7 +144,6 @@
     <Compile Include="HelpTextWindow.xaml.cs">
       <DependentUpon>HelpTextWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MouseHandlingMode.cs" />
     <Compile Include="OverviewWindow.xaml.cs">
       <DependentUpon>OverviewWindow.xaml</DependentUpon>
     </Compile>
@@ -174,7 +173,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="ZoomAndPan.Demo.InfiniteWorkspace.WPF_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -195,7 +193,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ZoomAndPan.WPF\ZoomAndPan.WPF.csproj">
-      <Project>{468ADEDE-6F5E-40C0-99C9-C6DAC4FAC934}</Project>
+      <Project>{468adede-6f5e-40c0-99c9-c6dac4fac934}</Project>
       <Name>ZoomAndPan.WPF</Name>
     </ProjectReference>
   </ItemGroup>

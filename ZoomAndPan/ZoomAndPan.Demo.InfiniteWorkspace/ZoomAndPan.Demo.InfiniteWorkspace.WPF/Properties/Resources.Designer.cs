@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ZoomAndPanSample.Properties {
+namespace ZoomAndPanSample {
     using System;
     
     
