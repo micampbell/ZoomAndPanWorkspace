@@ -8,11 +8,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Folder Include="Properties\" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\..\ZoomAndPan.WPF\ZoomAndPan.WPF.csproj" />
+	  <Page Update="Properties\Generic.xaml">
+	    <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+	  </Page>
 	</ItemGroup>
 
 </Project>

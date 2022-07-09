@@ -2,7 +2,6 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
         xmlns:zp="clr-namespace:ZoomAndPanSample" 
-        xmlns:zoomandpansample="clr-namespace:ZoomAndPanSample;assembly=ZoomAndPan.WPF"
         Title="Overview" 
     Height="200" 
     Width="200" 
@@ -40,7 +39,7 @@
     This is used so that we can scale the content to fit the overview window,
     therefore we see an overview of all of the content at once.
     -->
-    <zoomandpansample:ZoomAndPanControl
+    <zp:ZoomAndPanControl
         x:Name="overview"
         Background="LightGray"
         SizeChanged="overview_SizeChanged"
@@ -112,6 +111,6 @@
             </Canvas>                             
             
         </Grid>                        
-    </zoomandpansample:ZoomAndPanControl>
+    </zp:ZoomAndPanControl>
 
 </Window>

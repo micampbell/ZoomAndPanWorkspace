@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZoomAndPan.WPF", "ZoomAndPan\ZoomAndPan.WPF\ZoomAndPan.WPF.csproj", "{468ADEDE-6F5E-40C0-99C9-C6DAC4FAC934}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZoomAndPan.Demo.InfiniteWorkspace.WPF", "ZoomAndPan\ZoomAndPan.Demo.InfiniteWorkspace\ZoomAndPan.Demo.InfiniteWorkspace.WPF\ZoomAndPan.Demo.InfiniteWorkspace.WPF.csproj", "{CD1CC86C-7BAF-45F1-889F-FB087DE883EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZoomAndPan.Demo.InfiniteWorkspace.WPF", "ZoomAndPan\ZoomAndPan.Demo.InfiniteWorkspace\ZoomAndPan.Demo.InfiniteWorkspace.WPF\ZoomAndPan.Demo.InfiniteWorkspace.WPF.csproj", "{CD1CC86C-7BAF-45F1-889F-FB087DE883EF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{760B5104-37F8-4671-BC8E-EA2309F847A8}"
 EndProject
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{468ADEDE-6F5E-40C0-99C9-C6DAC4FAC934}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{468ADEDE-6F5E-40C0-99C9-C6DAC4FAC934}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{468ADEDE-6F5E-40C0-99C9-C6DAC4FAC934}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{468ADEDE-6F5E-40C0-99C9-C6DAC4FAC934}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CD1CC86C-7BAF-45F1-889F-FB087DE883EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CD1CC86C-7BAF-45F1-889F-FB087DE883EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD1CC86C-7BAF-45F1-889F-FB087DE883EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -28,7 +22,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{468ADEDE-6F5E-40C0-99C9-C6DAC4FAC934} = {760B5104-37F8-4671-BC8E-EA2309F847A8}
 		{CD1CC86C-7BAF-45F1-889F-FB087DE883EF} = {760B5104-37F8-4671-BC8E-EA2309F847A8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

@@ -578,7 +578,7 @@ namespace ZoomAndPanSample
     public override void OnApplyTemplate()
     {
       base.OnApplyTemplate();
-      //WPF// content = this.Template.FindName("PART_Content", this) as FrameworkElement;
+      content = this.Template.FindName("PART_Content", this) as FrameworkElement;
       this.content = this.GetTemplateChild("PART_Content") as FrameworkElement;
       this.dragZoomCanvas = this.GetTemplateChild("PART_DragZoomCanvas") as Canvas;
       this.dragZoomBorder = this.GetTemplateChild("PART_DragZoomBorder") as Border;
